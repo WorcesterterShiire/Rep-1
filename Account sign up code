@@ -1,0 +1,144 @@
+intro = "-------------------------------------------------------A\tc\tt\ti\tv\ti\tt\ty\t \t#\t5-----------------------------------------------------------"
+upper = intro.upper()
+expand = upper.expandtabs(3)
+x = expand.center(140 ," ")
+print(x)
+print("\n\n")
+intro = ("-----------------------------------------------a\tc\tc\to\tt\tu\tn\tt\t \ts\ti\tg\tn\t\t\tu\tp-----------------------------------------------------------")
+upper = intro.upper()
+expand = upper.expandtabs(3)
+x = expand.center(140 ," ")
+print(x)
+
+Title = "Note: Making an Account in our website includes you giving personal information"
+Titled = Title.title()
+print(Titled)
+while True:
+    FirstName = input("First Name:")
+
+    if FirstName.isspace() or not FirstName.isalpha() or not FirstName.istitle() or len(FirstName) <= 1:
+        print("The Error May have been: \n1. A blank Input \n2. Integer Input \n3. Didn't Start with a Capital Letter \n4. Name only contained 1 Letter\n5. Two or more Capital Letters")
+        continue
+    break
+while True:
+    MiddleName = input("Middle Name:")
+
+    if MiddleName.isspace() or not MiddleName.isalpha() or not MiddleName.istitle() or len(MiddleName) <= 1:
+        print("The Error May have been: \n1. A blank Input \n2. Integer Input \n3. Didn't Start with a Capital Letter \n4. Name only contained 1 Letter\n5. Two or more Capital Letters")
+        continue
+    break
+while True:
+    FamilyName = input("Family Name:")
+
+    if FamilyName.isspace() or not FamilyName.isalpha() or not FamilyName.istitle() or len(FamilyName) <= 1:
+        print("The Error May have been: \n1. A blank Input \n2. Integer Input \n3. Didn't Start with a Capital Letter \n4. Name only contained 1 Letter\n5. Two or more Capital Letters")
+        continue
+    break
+while True:
+    Email = input("Enter Email Address: ")
+
+    if Email.endswith("@gmail.com",0,40):
+        username, domain = Email.split('@')
+        if any(char.isdigit() for char in username): # not using any() will include symbols and spaces
+
+            break
+        else:
+            print("Invalid email address. Please include at least one number before '@'.")
+    else:
+        print("Invalid email address. Please include '@' , 'gmail' after '@' and '.com' at the end")
+while True:
+    try:
+        ContactNumber = int(input("Enter Contact Number:"))
+        if 9000000000 <= ContactNumber <= 9999999999:  # accepts numbers that start with 09 and must have 11 digits in the user input
+            break
+        else:
+            print("Invalid Contact number.")
+    except ValueError:
+        print("Invalid Input!")
+        print("Please input only numeric characters.")
+ValidSex = {"male", "female","lgbtq"}  # Only from this array are the correct user input. anything else gets rejected
+while True:
+    Split = "Valid Inputs/Sex: 'Male\nFemale\nLGBTQ"
+    Splat = Split.splitlines()
+    print(Splat)
+    Sex = input("Enter Sex:")
+    Segs = Sex.lower()
+    if Segs in ValidSex:
+        break
+    else:
+        print("Invalid Input!")
+while True:
+    try:
+        Age = int(input("Age:"))
+        if Age >= 12 and Age <= 110:
+            break
+        else:
+            print("Invalid Input Age! 12-110")
+    except ValueError:
+        print("Invalid input! Please input between the age of 12 and 110")
+Name1 = "{0}\t{1}\t{2}".format(FirstName,MiddleName,FamilyName)
+print("Name: "+Name1.expandtabs(1))
+print("Email entered: ", Email)
+print("Sex " + Segs)
+print("Age: " + str(Age))
+
+Fill = "WELCOME! LET'S CREATE YOUR ACCOUNT!"
+print(Fill.capitalize())
+
+while True:
+    Username = input("Enter your username: ")
+    if len(Username) < 3 or Username.isspace():
+        print("Username must have at least 3 characters and should not be blank or contain spaces.")
+    else:
+        break
+
+while True:
+    Password = input("Enter your password: ")
+    if len(Password) < 8 or Password.isspace():
+        print("Password must have at least 8 characters and should not be blank or contain spaces.")
+    else:
+        ConfirmPassword = input("Confirm your password: ")
+
+        if Password == ConfirmPassword:
+            print("Account created successfully!")
+            break
+        else:
+            print("Passwords do not match. Please try again.")
+
+while True:
+    Login = input("Do you want to log in? (yes/no): ").casefold()
+    Login = Login.capitalize()
+
+    if Login == "Yes":
+        print("Welcome back! Let's log in.")
+        EnteredUsername = input("Enter your username: ")
+        EnteredPassword = input("Enter your password: ")
+
+        if EnteredUsername == Username and EnteredPassword == Password:
+            print("Login successful!")
+            break
+        else:
+            print("Invalid username or password. Please try again.")
+    elif Login == "No":
+        print("Thank you! Have a great day!")
+        break
+    else:
+        print("Invalid choice. Please enter 'yes' or 'no'.")
+
+# Used Methods
+# 1.  upper(),
+# 2.  expandtabs()
+# 3.  center(),
+# 4.  istitle()
+# 5., isalpha()
+# 6., len()
+# 7., isspace()
+# 8., format()
+# 9., split()
+# 10. isdigit()
+# 11. lower()
+# 12. casefold()
+# 13. endswith()
+# 14. capitalize()
+# 15. splitlines()
+# 16. title()
