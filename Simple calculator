@@ -1,0 +1,70 @@
+while True:
+    print("Operations:\nA. Addition\nB. Subtraction\nC. Multiplication\nD. Division\nE. Exponent\nF. Remainder\nG-Z. Exit")
+    Operation = input("Enter the Operation You want to open:")
+    if Operation.lower() == "a":
+        try:
+            num1 = float(input("Enter Number #1:"))
+            num2 = float(input("Enter Number #2:"))
+            Addition = num1 + num2      
+            print(f"The Division of {num1}  and {num2} is {Addition}!")
+            if num2 == -0 or num1 == -0:
+                raise ZeroDivisionError
+        except ZeroDivisionError:
+            print("Cannot divide by Zero")
+    elif Operation.lower() == "b":
+        try:
+            num1 = int(input("Enter Number #1:"))
+            num2 = int(input("Enter Number #2:"))
+            Subtraction = num1 - num2
+            print(f"The Subtraction of {num1}  and {num2} is {Subtraction}!")
+            if num2 == -0 or num1 == -0:
+                raise ZeroDivisionError
+        except ZeroDivisionError:
+            print("Cannot divide by Zero")
+
+    elif Operation.lower() == "c":
+        try:
+            num1 = int(input("Enter Number #1:"))
+            num2 = int(input("Enter Number #2:"))
+            Multiplication = num1 * num2
+            print(f"The Multiple of {num1}  and {num2} is {Multiplication}!")
+            if num2 == -0 or num1 == -0:
+                raise ZeroDivisionError
+        except ZeroDivisionError:
+            print("Cannot divide by negative Zero")
+    elif Operation.lower() == "d":
+        try:
+            num1 = float(input("Enter Number #1:"))
+            num2 = float(input("Enter Number #2:"))
+            Division = num1 / num2
+            print(f"The Division of {num1}  and {num2} is {Division}!")
+            if num2 == 0 or num2 == -0 or num1 == -0:
+                raise ZeroDivisionError
+        except ZeroDivisionError:
+            print("Cannot divide by Zero")
+    elif Operation.lower() == "e":
+        try:
+            num1 = int(input("Enter Number #1:"))
+            num2 = int(input("Enter Number #2:"))
+            Exponent = num1 ^ num2
+            print(f"The Exponent of {num1}  and {num2} is {Exponent}!")
+            if num2 == -0 or num1 == -0:
+                raise ZeroDivisionError
+        except ZeroDivisionError:
+            print("Cannot divide by Zero")
+
+    elif Operation.lower() == "e":
+        try:
+            num1 = int(input("Enter Number #1:"))
+            num2 = int(input("Enter Number #2:"))
+            Remainder = num1 % num2
+            print(f"The Division of {num1}  and {num2} is {Remainder}!")
+            if num2 == 0 or num2 or num1 == -0:
+                raise ZeroDivisionError
+        except ZeroDivisionError:
+            print("Cannot Divide by Zero")
+    elif Operation.lower() == "g":
+        print("Exit. Are you sure?")
+        user_input = input("(yes/no): ")
+        if user_input.lower() != 'yes' or user_input.lower() != 'y':
+            break
